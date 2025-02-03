@@ -17,8 +17,8 @@ export const HeroSection = () => {
             <div className='text-sm font-medium'>Available for new projects</div>
           </div>
         </div>
-        <h1>Building Exceptional User Experiences</h1>
-        <p>
+        <h1 className='font-serif text-3xl text-center mt-8 tracking-wide'>Building Exceptional User Experiences</h1>
+        <p className='mt-4 text-center text-white/60'>
           I specialize in transforming designs into functional, high-performing
           web applications. Let's discuss your next project.
         </p>
