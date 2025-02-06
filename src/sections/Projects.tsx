@@ -46,9 +46,11 @@ export const ProjectsSection = () => {
   return (
     <div>
       <div className="container">
-        <p>Real-world Results</p>
-        <h2>Featured Projects</h2>
-        <p>See how I transformed concepts into engaging digital experiences.</p>
+        <div className="flex justify-center">
+          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">Real-world Results</p>
+        </div>
+        <h2 className="font-serif text-3xl text-center mt-6">Featured Projects</h2>
+        <p className="text-center text-white/60 mt-4">See how I transformed concepts into engaging digital experiences.</p>
         <div>
           {portfolioProjects.map((project) => (
             <div key={project.title}>
