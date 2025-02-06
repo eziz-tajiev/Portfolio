@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const portfolioProjects = [
   {
-    company: "project one",
+    company: "Project one",
     year: "2022",
     title: "fitness website",
     results: [
@@ -17,7 +17,7 @@ const portfolioProjects = [
     image: darkSaasLandingPage,
   },
   {
-    company: "project two",
+    company: "Project two",
     year: "2021",
     title: "github user search",
     results: [
@@ -51,12 +51,15 @@ export const ProjectsSection = () => {
         </div>
         <h2 className="font-serif text-3xl text-center mt-6">Featured Projects</h2>
         <p className="text-center text-white/60 mt-4">See how I transformed concepts into engaging digital experiences.</p>
-        <div>
+        <div className="flex flex-col mt-10">
           {portfolioProjects.map((project) => (
-            <div key={project.title}>
+            <div key={project.title} 
+                className="bg-gray-800 rounded-3xl overflow-hidden outline outline-2 outline-white/20 -outline-offset-2">
               <div>
-                <span>{project.company}</span>
-                <span>{project.year}</span>
+                <div>
+                  <span>{project.company}</span>
+                  <span>{project.year}</span>
+                </div>
               </div>
               <h3>{project.title}</h3>
               <hr />
