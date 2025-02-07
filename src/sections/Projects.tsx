@@ -57,12 +57,13 @@ export const ProjectsSection = () => {
         <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project) => (
             <div key={project.title}
-            className="relative bg-gray-800 rounded-3xl overflow-hidden outline outline-2 outline-white/20 -outline-offset-2 px-8 pt-8 md:pt-12 md:px-10 z-10">
+            className="relative bg-gray-800 rounded-3xl overflow-hidden outline outline-2 outline-white/20 -outline-offset-2
+            px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 z-10">
               <div className="absolute inset-0 -z-10 opacity-5" style={{
                 backgroundImage: `url(${grainImage.src})`
               }}></div>
-                <div className="lg:grid lg:grid-cols-2">
-                  <div>
+                <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+                  <div className="lg:pb-16">
                     <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest
                     text-sm text-transparent bg-clip-text">
                       <span>{project.company}</span>
@@ -80,14 +81,15 @@ export const ProjectsSection = () => {
                     )}
                     </ul>
                     <a href="">
-                      <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
+                      <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center
+                       gap-2 mt-8 md:w-auto px-6">
                         <span>Visit Live Site</span>
                         <ArrowUpRight className="size-4" />
                       </button>
                     </a>
                   </div>
-                  <div>
-                    <Image src={project.image} alt={project.title} className="mt-8 -mb-4 md:-mb-0" />
+                  <div className="relative">
+                    <Image src={project.image} alt={project.title} className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none" />
                   </div>
                 </div>
               </div>
