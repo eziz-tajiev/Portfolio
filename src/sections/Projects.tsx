@@ -54,10 +54,10 @@ export const ProjectsSection = () => {
         </div>
         <h2 className="font-serif text-3xl text-center mt-6">Featured Projects</h2>
         <p className="text-center text-white/60 mt-4 md:text-lg max-w-md mx-auto">See how I transformed concepts into engaging digital experiences.</p>
-        <div className="flex flex-col mt-10 gap-16">
+        <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project) => (
-            <div key={project.title} 
-            className="relative bg-gray-800 rounded-3xl overflow-hidden outline outline-2 outline-white/20 -outline-offset-2 px-8 pt-8 z-10">
+            <div key={project.title}
+            className="relative bg-gray-800 rounded-3xl overflow-hidden outline outline-2 outline-white/20 -outline-offset-2 px-8 pt-8 md:pt-12 md:px-10 z-10">
               <div className="absolute inset-0 -z-10 opacity-5" style={{
                 backgroundImage: `url(${grainImage.src})`
               }}></div>
@@ -67,23 +67,23 @@ export const ProjectsSection = () => {
                   <span>&bull;</span>
                   <span>{project.year}</span>
                 </div>
-                <h3 className="font-serif text-2xl mt-2">{project.title}</h3>
-                <hr className="border-t-2 border-white/5 mt-4"/>
-                <ul className="flex flex-col gap-4 mt-4">
+                <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5">{project.title}</h3>
+                <hr className="border-t-2 border-white/5 mt-4 md:mt-5"/>
+                <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                   {project.results.map((result) => 
-                  <li className="flex gap-2 text-white/50 items-center">
-                    <CheckIcon className="size-5" />
+                  <li className="flex gap-2 text-white/50 text-sm md:text-base">
+                    <CheckIcon className="size-5 md:size-6" />
                     <span>{result.title}</span>
                   </li>
                 )}
                 </ul>
                 <a href="">
-                  <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                  <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
                     <span>Visit Live Site</span>
                     <ArrowUpRight className="size-4" />
                   </button>
                 </a>
-                <Image src={project.image} alt={project.title} className="mt-8 -mb-4" />
+                <Image src={project.image} alt={project.title} className="mt-8 -mb-4 md:-mb-0" />
               </div>
             ))}
         </div>
