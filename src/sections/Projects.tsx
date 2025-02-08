@@ -57,8 +57,8 @@ export const ProjectsSection = () => {
         <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project) => (
             <div key={project.title}
-            className="relative bg-gray-800 rounded-3xl overflow-hidden outline outline-2 outline-white/20 -outline-offset-2
-            px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 z-10">
+            className="relative bg-gray-800 rounded-3xl overflow-hidden px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 z-10 
+            after:absolute after:inset-0 after:z-10 after:border-2 after:border-white/20 after:rounded-3xl after:pointer-events-none">
               <div className="absolute inset-0 -z-10 opacity-5" style={{
                 backgroundImage: `url(${grainImage.src})`
               }}></div>
