@@ -1,10 +1,11 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import photo1 from "@/assets/images/dark-saas-landing-page.png";
+import photo2 from "@/assets/images/light-saas-landing-page.png";
+import photo3 from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg"
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg"
 import grainImage from "@/assets/images/grain.jpg"
+import { SectionHeader } from "@/components/SectionHeader";
 
 const portfolioProjects = [
   {
@@ -17,7 +18,7 @@ const portfolioProjects = [
       { title: "Project Description" },
     ],
     link: "fitgym",
-    image: darkSaasLandingPage,
+    image: photo1,
   },
   {
     company: "Project Two",
@@ -29,7 +30,7 @@ const portfolioProjects = [
       { title: "Project Description" },
     ],
     link: "Github",
-    image: lightSaasLandingPage,
+    image: photo2,
   },
   {
     company: "Project Three",
@@ -41,7 +42,7 @@ const portfolioProjects = [
       { title: "Project Description" },
     ],
     link: "dashboard",
-    image: aiStartupLandingPage,
+    image: photo3,
   },
 ];
 
@@ -49,11 +50,11 @@ export const ProjectsSection = () => {
   return (
     <section className="pb-16 lg:py-24">
       <div className="container">
-        <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">Real-world Results</p>
-        </div>
-        <h2 className="font-serif text-3xl text-center mt-6">Featured Projects</h2>
-        <p className="text-center text-white/60 mt-4 md:text-lg lg:text-xl max-w-md mx-auto">See how I transformed concepts into engaging digital experiences.</p>
+        <SectionHeader
+        eyebrow="Real-world Results"
+        title="Featured Projects"
+        description="See how I transformed concepts into engaging digital experiences."
+        />
         <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project) => (
             <div key={project.title}
