@@ -5,8 +5,10 @@ import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
+import grainImage from "@/assets/images/grain.jpg"
+import {Card} from "@/components/Card"
 
-const testimonials = [
+const quotes = [
   {
     name: "Pedro Pasclal",
     position: "Actor",
@@ -39,7 +41,7 @@ const testimonials = [
   },
 ];
 
-export const TestimonialsSection = () => {
+export const QuotesSection = () => {
   return(
     <div className="py-16">
       <div className="container">
@@ -49,13 +51,23 @@ export const TestimonialsSection = () => {
           description="It's not just me. See who inspires my work"
         />
         <div>
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.name} className="bg-gray-800 rounded-3xl p-6">
-              <Image src={testimonial.avatar} alt={testimonial.name} />
-              <div>{testimonial.name}</div>
-              <div>{testimonial.position}</div>
-              <p>{testimonial.text}</p>
-            </div>
+          {quotes.map((quote) => (
+            <Card key={quote.name}>
+              <div className="flex">
+                <div className="size-14 bg-gray-700 inline-flex items-center rounded-full">
+                <Image 
+                  src={quote.avatar} 
+                  alt={quote.name} 
+                  className="max-h-full" 
+                />
+                </div>
+              <div>
+                <div>{quote.name}</div>
+                <div>{quote.position}</div>
+              </div>
+              </div>
+              <p>{quote.text}</p>
+            </Card>
           ))}
         </div>
       </div>
