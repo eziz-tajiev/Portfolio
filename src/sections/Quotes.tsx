@@ -48,27 +48,29 @@ export const QuotesSection = () => {
         <SectionHeader 
           eyebrow="My Motivation"
           title="What Drives Me"
-          description="It's not just me. See who inspires my work"
+          description="It's not just me. See who inspires my work."
         />
-        <div>
+        <div className="flex mt-16 overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex gap-8 flex-none">
           {quotes.map((quote) => (
-            <Card key={quote.name}>
-              <div className="flex">
-                <div className="size-14 bg-gray-700 inline-flex items-center rounded-full">
-                <Image 
-                  src={quote.avatar} 
-                  alt={quote.name} 
-                  className="max-h-full" 
-                />
+            <Card key={quote.name} className="max-w-xs">
+              <div className="flex gap-4 items-center">
+                <div className="size-14 bg-gray-700 flex items-center rounded-full">
+                  <Image 
+                    src={quote.avatar} 
+                    alt={quote.name} 
+                    className="max-h-full"
+                  />
                 </div>
-              <div>
-                <div>{quote.name}</div>
-                <div>{quote.position}</div>
+                <div>
+                  <div className="font-semibold">{quote.name}</div>
+                  <div className="text-sm text-white/40">{quote.position}</div>
+                </div>
               </div>
-              </div>
-              <p>{quote.text}</p>
+              <p className="mt-4">{quote.text}</p>
             </Card>
           ))}
+          </div>
         </div>
       </div>
     </div>
