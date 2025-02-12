@@ -3,6 +3,53 @@ import { Card } from "@/components/Card";
 import StarIcon from "@/assets/icons/star.svg"
 import myPhoto from "@/assets/images/myPhoto.jpg"
 import Image from "next/image";
+
+
+const toolboxItems1 = [
+  {
+    title: "HTML5",
+    icon: "",
+  },
+  {
+    title: "CSS3",
+    icon: "",
+  },
+  {
+    title: "JavaScript",
+    icon: "",
+  },
+  {
+    title: "React",
+    icon: "",
+  },
+  {
+    title: "GitHub",
+    icon: "",
+  },
+]
+
+const toolboxItems2 = [
+  {
+    title: "Chrome",
+    icon: "",
+  },
+  {
+    title: "Tailwind Css",
+    icon: "",
+  },
+  {
+    title: "TypeScript",
+    icon: "",
+  },
+  {
+    title: "NextJs",
+    icon: "",
+  },
+  {
+    title: "Redux",
+    icon: "",
+  },
+]
 export const AboutSection = () => {
   return (
     <div className="pb-96">
