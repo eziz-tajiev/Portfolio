@@ -3,51 +3,61 @@ import { Card } from "@/components/Card";
 import StarIcon from "@/assets/icons/star.svg"
 import myPhoto from "@/assets/images/myPhoto.jpg"
 import Image from "next/image";
+import JsIcon from "@/assets/icons/square-js.svg"
+import HtmlIcon from "@/assets/icons/html5.svg"
+import CssIcon from "@/assets/icons/css3.svg"
+import ReactIcon from "@/assets/icons/react.svg"
+import GihubIcon from "@/assets/icons/github.svg"
+import ChromeIcon from "@/assets/icons/chrome.svg"
+import TailwindIcon from "@/assets/icons/tailwindcss.svg"
+import TsIcon from "@/assets/icons/typescript.svg"
+import NextJsIcon from "@/assets/icons/nextjs.svg"
+import ReduxIcon from "@/assets/icons/redux.svg"
 
 
 const toolboxItems1 = [
   {
     title: "HTML5",
-    icon: "",
+    icon: <HtmlIcon />,
   },
   {
     title: "CSS3",
-    icon: "",
+    icon: <CssIcon />,
   },
   {
     title: "JavaScript",
-    icon: "",
+    icon: <JsIcon />,
   },
   {
     title: "React",
-    icon: "",
+    icon: <ReactIcon />,
   },
   {
     title: "GitHub",
-    icon: "",
+    icon: <GihubIcon />,
   },
 ]
 
 const toolboxItems2 = [
   {
     title: "Chrome",
-    icon: "",
+    icon: <ChromeIcon />,
   },
   {
     title: "Tailwind Css",
-    icon: "",
+    icon: <TailwindIcon />,
   },
   {
     title: "TypeScript",
-    icon: "",
+    icon: <TsIcon />,
   },
   {
     title: "NextJs",
-    icon: "",
+    icon: <NextJsIcon />,
   },
   {
     title: "Redux",
-    icon: "",
+    icon: <ReduxIcon />,
   },
 ]
 export const AboutSection = () => {
