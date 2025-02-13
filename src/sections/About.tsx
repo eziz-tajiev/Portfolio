@@ -13,7 +13,10 @@ import TailwindIcon from "@/assets/icons/tailwindcss.svg"
 import TsIcon from "@/assets/icons/typescript.svg"
 import NextJsIcon from "@/assets/icons/nextjs.svg"
 import ReduxIcon from "@/assets/icons/redux.svg"
+import AntDesign from "@/assets/icons/ant-design.svg"
 import { TechIcon } from "@/components/TechIcon";
+import myCv from "@/assets/images/myCv.png"
+import { title } from "process";
 
 
 const toolboxItems1 = [
@@ -36,6 +39,10 @@ const toolboxItems1 = [
   {
     title: "GitHub",
     iconType: GihubIcon,
+  },
+  {
+    title: "Ant Design",
+    iconType: AntDesign,
   },
 ]
 
@@ -62,6 +69,26 @@ const toolboxItems2 = [
   },
 ]
 
+const hobbies = [
+  {
+    title: "Music",
+    emoji: '🎵'
+  },
+  {
+    title: "Reading",
+    emoji: '📚'
+  },
+  {
+    title: "Hiking",
+    emoji: '🥾'
+  },
+  {
+    title: "Swimming",
+    emoji: '🏊🏽‍♂️'
+  },
+  
+]
+
 export const AboutSection = () => {
   return (
     <div className="pb-96">
@@ -78,6 +105,7 @@ export const AboutSection = () => {
             </div>
             <Image src={myPhoto} alt="My Photo" />
           </Card>
+
           <Card>
             <div>
               <StarIcon />
@@ -93,6 +121,32 @@ export const AboutSection = () => {
               ))}
             </div>
           </Card>
+
+          <Card>
+            <div>
+              <StarIcon />
+              <h3>Beyond the code</h3>
+              <p>Explore my interest and hobbies beyond the digital realm</p>
+            </div>
+            <div>
+              {hobbies.map(hobby=>(
+                <div key={hobby.title}>
+                  <span>{hobby.title}</span>
+                  <span>{hobby.emoji}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          <Card>
+            <div>
+              <StarIcon />
+              <h3>My CV</h3>
+              <p>Click to the my CV and Explore more about me</p>
+            </div>
+            <Image src={myCv} alt="My CV" />
+          </Card>
+
         </div>
     </div>
   );

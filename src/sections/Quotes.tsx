@@ -10,7 +10,7 @@ import {Card} from "@/components/Card"
 
 const quotes = [
   {
-    name: "Pedro Pasclal",
+    name: "Pedro Pascal",
     position: "Actor",
     text: "The best way to predict your future is to create it.",
     avatar: memojiAvatar1,
