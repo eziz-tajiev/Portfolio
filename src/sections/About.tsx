@@ -98,21 +98,21 @@ export const AboutSection = () => {
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do."/>
           <div className="mt-20">
+
             <Card className="h-[320px]">
               <CardHeader
-                  title="My Photo"
-                  description="Explore my photo" />
+                title="My Photo"
+                description="Explore my photo" />
               <div className="w-44 mx-auto mt-8">
                 <Image src={myPhoto} alt="My Photo" />
               </div>
             </Card>
 
             <Card>
-              <div>
-                <StarIcon />
-                <h3>My Toolbox</h3>
-                <p>Explore the technologies and tools I use to craft exceptional digital experiences.</p>
-              </div>
+              <CardHeader
+                title="My Toolbox"
+                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+              />
               <div>
                 {toolboxItems1.map(item => (
                   <div key={item.title}>
@@ -124,11 +124,10 @@ export const AboutSection = () => {
             </Card>
 
             <Card>
-              <div>
-                <StarIcon />
-                <h3>Beyond the code</h3>
-                <p>Explore my interest and hobbies beyond the digital realm</p>
-              </div>
+              <CardHeader
+                title="Beyond the code"
+                description="Explore my interest and hobbies beyond the digital realm"
+              />
               <div>
                 {hobbies.map(hobby=>(
                   <div key={hobby.title}>
@@ -140,11 +139,10 @@ export const AboutSection = () => {
             </Card>
 
             <Card>
-              <div>
-                <StarIcon />
-                <h3>My CV</h3>
-                <p>Click to the my CV and Explore more about me</p>
-              </div>
+              <CardHeader
+                  title="My CV"
+                  description="Click to the my CV and Explore more about me"
+                />
               <Image src={myCv} alt="My CV" />
             </Card>
 
