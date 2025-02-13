@@ -13,53 +13,55 @@ import TailwindIcon from "@/assets/icons/tailwindcss.svg"
 import TsIcon from "@/assets/icons/typescript.svg"
 import NextJsIcon from "@/assets/icons/nextjs.svg"
 import ReduxIcon from "@/assets/icons/redux.svg"
+import { TechIcon } from "@/components/TechIcon";
 
 
 const toolboxItems1 = [
   {
     title: "HTML5",
-    icon: <HtmlIcon />,
+    iconType: HtmlIcon,
   },
   {
     title: "CSS3",
-    icon: <CssIcon />,
+    iconType: CssIcon,
   },
   {
     title: "JavaScript",
-    icon: <JsIcon />,
+    iconType: JsIcon,
   },
   {
     title: "React",
-    icon: <ReactIcon />,
+    iconType: ReactIcon,
   },
   {
     title: "GitHub",
-    icon: <GihubIcon />,
+    iconType: GihubIcon,
   },
 ]
 
 const toolboxItems2 = [
   {
     title: "Chrome",
-    icon: <ChromeIcon />,
+    iconType: ChromeIcon,
   },
   {
     title: "Tailwind Css",
-    icon: <TailwindIcon />,
+    iconType: TailwindIcon,
   },
   {
     title: "TypeScript",
-    icon: <TsIcon />,
+    iconType: TsIcon,
   },
   {
     title: "NextJs",
-    icon: <NextJsIcon />,
+    iconType: NextJsIcon,
   },
   {
     title: "Redux",
-    icon: <ReduxIcon />,
+    iconType: ReduxIcon,
   },
 ]
+
 export const AboutSection = () => {
   return (
     <div className="pb-96">
@@ -81,6 +83,14 @@ export const AboutSection = () => {
               <StarIcon />
               <h3>My Toolbox</h3>
               <p>Explore the technologies and tools I use to craft exceptional digital experiences.</p>
+            </div>
+            <div>
+              {toolboxItems1.map(item => (
+                <div key={item.title}>
+                  <TechIcon component={item.iconType} />
+                  <span>{item.title}</span>
+                </div>
+              ))}
             </div>
           </Card>
         </div>
