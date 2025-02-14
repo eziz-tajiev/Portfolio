@@ -115,7 +115,7 @@ export const AboutSection = () => {
               />
               <div>
                 {toolboxItems1.map(item => (
-                  <div key={item.title}>
+                  <div key={item.title} className="inline-flex">
                     <TechIcon component={item.iconType} />
                     <span>{item.title}</span>
                   </div>

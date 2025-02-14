@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import {Inter, Calistoga} from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
 import {twMerge} from "tailwind-merge"
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans'});
-const calistoga = Calistoga({
-  subsets: ['latin'],
+const inter = localFont({
+  src: '../../public/fonts/Inter-VariableFont_opsz,wght.ttf',
+  variable: "--font-sans",
+});
+const calistoga = localFont({
+  src: '../../public/fonts/Calistoga-Regular.ttf',
   variable: '--font-serif',
-  weight: ['400'],
+  weight: "400",
 })
 
 export const metadata: Metadata = {
