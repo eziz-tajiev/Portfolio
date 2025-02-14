@@ -14,9 +14,11 @@ import TsIcon from "@/assets/icons/typescript.svg"
 import NextJsIcon from "@/assets/icons/nextjs.svg"
 import ReduxIcon from "@/assets/icons/redux.svg"
 import AntDesign from "@/assets/icons/ant-design.svg"
+import Sass from "@/assets/icons/sass.svg" 
 import { TechIcon } from "@/components/TechIcon";
 import myCv from "@/assets/images/myCv.png"
 import { CardHeader } from "@/components/Card.Header";
+import { ToolboxItems } from "@/components/ToolboxItems";
 
 
 const toolboxItems1 = [
@@ -67,6 +69,10 @@ const toolboxItems2 = [
     title: "Redux",
     iconType: ReduxIcon,
   },
+  {
+    title: "SASS/SCSS",
+    iconType: Sass,
+  },
 ]
 
 const hobbies = [
@@ -113,14 +119,8 @@ export const AboutSection = () => {
                 title="My Toolbox"
                 description="Explore the technologies and tools I use to craft exceptional digital experiences."
               />
-              <div>
-                {toolboxItems1.map(item => (
-                  <div key={item.title} className="inline-flex">
-                    <TechIcon component={item.iconType} />
-                    <span>{item.title}</span>
-                  </div>
-                ))}
-              </div>
+              <ToolboxItems items={toolboxItems1} />
+              <ToolboxItems items={toolboxItems2} />
             </Card>
 
             <Card>
