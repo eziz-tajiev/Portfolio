@@ -78,7 +78,7 @@ const toolboxItems2 = [
 const hobbies = [
   {
     title: "Music",
-    emoji: '🎵'
+    emoji: '🎧'
   },
   {
     title: "Reading",
@@ -103,7 +103,7 @@ export const AboutSection = () => {
           eyebrow="About Me"
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do."/>
-          <div className="mt-20 flex flex-col gap-6">
+          <div className="mt-20 flex flex-col gap-8">
 
             <Card className="h-[320px]">
               <CardHeader
@@ -131,8 +131,8 @@ export const AboutSection = () => {
               />
               <div>
                 {hobbies.map(hobby=>(
-                  <div key={hobby.title}>
-                    <span>{hobby.title}</span>
+                  <div key={hobby.title} className="inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5">
+                    <span className="font-medium text-gray-950">{hobby.title}</span>
                     <span>{hobby.emoji}</span>
                   </div>
                 ))}
