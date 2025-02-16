@@ -78,7 +78,9 @@ const toolboxItems2 = [
 const hobbies = [
   {
     title: "Music",
-    emoji: '🎧'
+    emoji: '🎧',
+    left: '50%',
+    top: '50%',
   },
   {
     title: "Reading",
@@ -114,7 +116,7 @@ export const AboutSection = () => {
               </div>
             </Card>
 
-            <Card className="h-[320px] p-0">
+            <Card className="h-[320px] p-0 flex flex-col">
               <CardHeader
                 title="My Toolbox"
                 description="Explore the technologies and tools I use to craft exceptional digital experiences."
@@ -124,14 +126,20 @@ export const AboutSection = () => {
               <ToolboxItems items={toolboxItems2} className="mt-6" itemsWrapperClassName="-translate-x-1/2"/>
             </Card>
 
-            <Card>
+            <Card className="h-[320px] p-0 flex flex-col">
               <CardHeader
                 title="Beyond the code"
                 description="Explore my interest and hobbies beyond the digital realm"
+                classname="px-6 py-6"
               />
-              <div>
+              <div className="relative flex-1">
                 {hobbies.map(hobby=>(
-                  <div key={hobby.title} className="inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5">
+                  <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                  style={{
+                    left: hobby.left,
+                    top: hobby.top,
+
+                  }}>
                     <span className="font-medium text-gray-950">{hobby.title}</span>
                     <span>{hobby.emoji}</span>
                   </div>
