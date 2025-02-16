@@ -17,7 +17,7 @@ import AntDesign from "@/assets/icons/ant-design.svg"
 import Sass from "@/assets/icons/sass.svg" 
 import { TechIcon } from "@/components/TechIcon";
 import myCv from "@/assets/images/myCv.png"
-import { CardHeader } from "@/components/Card.Header";
+import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 
 
@@ -114,13 +114,14 @@ export const AboutSection = () => {
               </div>
             </Card>
 
-            <Card>
+            <Card className="h-[320px] p-0">
               <CardHeader
                 title="My Toolbox"
                 description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                classname="px-6 pt-6"
               />
-              <ToolboxItems items={toolboxItems1} />
-              <ToolboxItems items={toolboxItems2} />
+              <ToolboxItems items={toolboxItems1} className="mt-6" />
+              <ToolboxItems items={toolboxItems2} className="mt-6" />
             </Card>
 
             <Card>
