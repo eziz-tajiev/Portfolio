@@ -154,12 +154,15 @@ export const AboutSection = () => {
               </div>
             </Card>
 
-            <Card>
+            <Card className="h-[320px] relative">
               <CardHeader
                   title="My CV"
                   description="Click to the my CV and Explore more about me"
                 />
-              <Image src={myCv} alt="My CV" />
+              <div className="absolute bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full size-20 top-[61%] left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center
+              after:content-[''] after:absolute after:inset-0 after:border-2 after:border-gray-950/30 after:rounded-full">
+                <Image src={myCv} alt="My CV" className="size-14"/>
+              </div>
             </Card>
 
           </div>
