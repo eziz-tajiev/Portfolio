@@ -53,7 +53,7 @@ export const QuotesSection = () => {
         <div className="flex mt-16 lg:mt-24 overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-8 flex-none">
           {quotes.map((quote) => (
-            <Card key={quote.name} className="max-w-xs md:max-w-md md:p-8">
+            <Card key={quote.name} className="max-w-xs md:max-w-md p-6 md:p-8">
               <div className="flex gap-4 items-center">
                 <div className="size-14 bg-gray-700 flex items-center rounded-full">
                   <Image 
