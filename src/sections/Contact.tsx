@@ -35,29 +35,29 @@ import Telegram from "@/assets/icons/Telegram - Negative.svg"
 import { title } from "process"
 const contacts = [
   {
-    icon: <Call />,
+    icon: <Call className="md:size-7 lg:size-8" />,
     title: '+993 61 965538',
     href: '#',
   },
   {
-    icon: <Email />,
+    icon: <Email className="md:size-7 lg:size-8" />,
     title: 'eziztajiev@gmail.com',
     href: '#',
   }
 ]
 const socialMedia = [
   {
-    icon: <WhatsApp className='size-5 md:size-7' />,
+    icon: <WhatsApp className='size-5 md:size-7 lg:size-11' />,
     title: 'WhatsApp',
     href: '#',
   },
   {
-    icon: <GitHub className="md:size-7" />,
+    icon: <GitHub className="md:size-7 lg:size-11" />,
     title: 'GitHub',
     href: '#',
   },
   {
-    icon: <Telegram className="md:size-7"/>,
+    icon: <Telegram className="md:size-7 lg:size-11"/>,
     title: 'Telegram',
     href: '#',
   },
@@ -73,13 +73,13 @@ export const ContactSection = () => {
           <div className="container">
             <div className="flex flex-col gap-12 lg:flex lg:flex-row lg:justify-between">
               {/* 1 element */}
-              <div className="lg:w-[530px]">
-                <div className="flex justify-center py-10">
+              <div className="lg:w-[400px]">
+                <div className="flex justify-center py-11">
                   <h2 className="text-2xl md:text-3xl w-[274px] md:w-[400px] text-center font-semibold uppercase bg-clip-text
-                  bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent">Let's create something amazing together</h2>
+                  bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent lg:text-start lg:text-4xl">Let's create something amazing together</h2>
                 </div>
-                  <div className="flex justify-center md:justify-center">
-                    <div className="flex flex-col items-center justify-center text-[18px] leading-[21.78px] gap-3 w-[230px] md:text-2xl">
+                  <div className="flex justify-center lg:justify-start">
+                    <div className="flex flex-col items-center text-[18px] leading-[21.78px] gap-3 md:text-2xl lg:text-[28px] lg:items-start lg:justify-start">
                       {contacts.map(contact=>(
                       <a href={contact.href} className="inline-flex gap-2 items-center">
                         <span>{contact.icon}</span>
@@ -89,9 +89,9 @@ export const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex justify-around pt-7 md:justify-center md:gap-10">
+                  <div className="flex justify-around pt-7 md:justify-center md:gap-10 lg:justify-start lg:pt-10">
                       {socialMedia.map(media=>(
-                        <a href={media.href} className="md:inline-flex md:items-center md:gap-3">
+                        <a href={media.href} className="md:inline-flex md:items-center md:gap-3 lg:flex-col lg:justify-center">
                           <span className="flex justify-center">{media.icon}</span>
                           <span className="text-[14px] leading-[16.94px] md:text-base">{media.title}</span>
                         </a>
@@ -100,7 +100,7 @@ export const ContactSection = () => {
               </div>
                 <div>
                   {/* 2 element */}
-                  <div className="md:flex md:justify-center">
+                  <div className="md:flex md:justify-center lg:pt-12">
                     <div className="flex flex-col gap-4 pb-10 md:w-[400px]">
                       <input type="text" placeholder="Full name" className="contact-input"/>
                       <input type="text" placeholder="How to contact you" className="contact-input"/>
