@@ -67,20 +67,19 @@ const socialMedia = [
 export const ContactSection = () => {
   return(
       <div className="pt-8 pb-0">
-        <div className="relative overflow-x-clip z-10">
+        <div className="relative overflow-x-clip">
         <div className="absolute h-[400px] w-[1600px] bottom-0 bg-emerald-300/30 left-1/2 -translate-x-1/2 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
         <div className="bg-black/15">
           <div className="container">
-            <div className="md:flex flex-col flex gap-12">
+            <div className="flex flex-col gap-12 lg:flex lg:flex-row lg:justify-between">
               {/* 1 element */}
-              <div>
-                <div className="flex justify-center py-10">
-                  <h2 className="text-2xl w-[274px] text-center font-semibold uppercase bg-clip-text 
+              <div className="lg:w-[530px]">
+                <div className="flex justify-center md:justify-start py-10">
+                  <h2 className="text-2xl md:text-3xl w-[274px] md:w-[510px] text-center md:text-start font-semibold uppercase bg-clip-text
                   bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent">Let's create something amazing together</h2>
                 </div>
-                <div className="">
-                  <div className="flex justify-center">
-                    <div className="flex flex-col items-center justify-center text-[18px] leading-[21.78px] gap-3 w-[230px]">
+                  <div className="bg-red-400 flex justify-center md:justify-start md:inline-flex">
+                    <div className="flex flex-col items-center justify-center md:justify-start text-[18px] leading-[21.78px] gap-3 w-[230px]">
                       {contacts.map(contact=>(
                       <a href={contact.href} className="inline-flex gap-2 items-center">
                         <span>{contact.icon}</span>
@@ -98,15 +97,16 @@ export const ContactSection = () => {
                         </a>
                       ))}
                   </div>
-                </div>
               </div>
                 <div>
                   {/* 2 element */}
-                  <div className="flex flex-col gap-4 pb-10">
-                    <input type="text" placeholder="Full name" className="contact-input"/>
-                    <input type="text" placeholder="How to contact you" className="contact-input"/>
-                    <textarea placeholder="Description" className="contact-input resize-none h-[150px]"></textarea>
-                    <button className="text-base font-bold py-3 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-xl text-gray-950">Send</button>
+                  <div className="md:flex md:justify-center">
+                    <div className="flex flex-col gap-4 pb-10 md:w-[400px]">
+                      <input type="text" placeholder="Full name" className="contact-input"/>
+                      <input type="text" placeholder="How to contact you" className="contact-input"/>
+                      <textarea placeholder="Description" className="contact-input resize-none h-[150px]"></textarea>
+                      <button className="text-base font-bold py-3 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-xl text-gray-950">Send</button>
+                    </div>
                   </div>
                 </div>
               </div>
