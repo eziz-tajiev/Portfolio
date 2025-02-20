@@ -47,17 +47,17 @@ const contacts = [
 ]
 const socialMedia = [
   {
-    icon: <WhatsApp className='size-5' />,
+    icon: <WhatsApp className='size-5 md:size-7' />,
     title: 'WhatsApp',
     href: '#',
   },
   {
-    icon: <GitHub />,
+    icon: <GitHub className="md:size-7" />,
     title: 'GitHub',
     href: '#',
   },
   {
-    icon: <Telegram />,
+    icon: <Telegram className="md:size-7"/>,
     title: 'Telegram',
     href: '#',
   },
@@ -74,12 +74,12 @@ export const ContactSection = () => {
             <div className="flex flex-col gap-12 lg:flex lg:flex-row lg:justify-between">
               {/* 1 element */}
               <div className="lg:w-[530px]">
-                <div className="flex justify-center md:justify-start py-10">
-                  <h2 className="text-2xl md:text-3xl w-[274px] md:w-[510px] text-center md:text-start font-semibold uppercase bg-clip-text
+                <div className="flex justify-center py-10">
+                  <h2 className="text-2xl md:text-3xl w-[274px] md:w-[400px] text-center font-semibold uppercase bg-clip-text
                   bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent">Let's create something amazing together</h2>
                 </div>
-                  <div className="bg-red-400 flex justify-center md:justify-start md:inline-flex">
-                    <div className="flex flex-col items-center justify-center md:justify-start text-[18px] leading-[21.78px] gap-3 w-[230px]">
+                  <div className="flex justify-center md:justify-center">
+                    <div className="flex flex-col items-center justify-center text-[18px] leading-[21.78px] gap-3 w-[230px] md:text-2xl">
                       {contacts.map(contact=>(
                       <a href={contact.href} className="inline-flex gap-2 items-center">
                         <span>{contact.icon}</span>
@@ -89,11 +89,11 @@ export const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex justify-around pt-7">
+                  <div className="flex justify-around pt-7 md:justify-center md:gap-10">
                       {socialMedia.map(media=>(
-                        <a href={media.href}>
+                        <a href={media.href} className="md:inline-flex md:items-center md:gap-3">
                           <span className="flex justify-center">{media.icon}</span>
-                          <span className="text-[14px] leading-[16.94px]">{media.title}</span>
+                          <span className="text-[14px] leading-[16.94px] md:text-base">{media.title}</span>
                         </a>
                       ))}
                   </div>
