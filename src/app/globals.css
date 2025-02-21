@@ -4,7 +4,7 @@
 
 @layer base {
     .nav-item {
-        @apply px-4 py-1.5 rounded-full text-white text-sm font-semibold;
+        @apply px-4 py-1.5 rounded-full text-white text-sm font-semibold transition;
     }
 
     .hero-ring {

@@ -45,16 +45,26 @@ export const Header = () => {
         <div className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
           {tabs.map(tab=>(
             <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`${
-                  activeTab === tab.id ? "text-gray-900" : "hover:text-white/70"
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`${
+               activeTab === tab.id ? "" : "hover:text-white/70"
                 } relative nav-item`}
               >
                 {activeTab === tab.id && (
-                  <motion.div layoutId="active-pill" className="absolute bg-white inset-0 rounded-full"/>
+                  <motion.div 
+                    layoutId="active-pill" 
+                    className="absolute bg-white inset-0"
+                    style={{
+                      borderRadius: '9999px',
+                    }}
+                    transition={{
+                      type:"spring",
+                      duration:0.6
+                    }}
+                  />
                 )}
-                <span className="relative">{tab.label}</span>
+                <span className="z-10 mix-blend-exclusion">{tab.label}</span>
             </button>
           ))}
         </div>
