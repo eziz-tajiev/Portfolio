@@ -53,7 +53,7 @@ export const Header = () => {
               >
                 {activeTab === tab.id && (
                   <motion.div 
-                    layoutId="active-pill" 
+                    layoutId="active-pill"
                     className="absolute bg-white inset-0"
                     style={{
                       borderRadius: '9999px',
@@ -64,7 +64,7 @@ export const Header = () => {
                     }}
                   />
                 )}
-                <span className="z-10 mix-blend-exclusion">{tab.label}</span>
+                <span className="relative z-10 mix-blend-exclusion">{tab.label}</span>
             </button>
           ))}
         </div>
