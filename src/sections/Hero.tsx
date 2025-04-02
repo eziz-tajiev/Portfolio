@@ -23,12 +23,14 @@ export const HeroSection = () => {
             <div className="relative bg-green-500 size-2.5 rounded-full">
               <motion.div
                 className="absolute bg-green-500 inset-0 rounded-full"
-                initial={{ scale: 1, opacity: 0.7 }}
-                animate={{ scale: 2, opacity: 0 }}
+                initial={{ scale: 1, opacity: 0.7 }} // Начальное состояние
+                animate={{ scale: 3, opacity: 0 }} // Конечное состояние
                 transition={{
-                  duration: 2,
-                  ease: "easeInOut",
+                  duration: 1.2, // Увеличил длительность для плавности
+                  ease: "easeOut",
                   repeat: Infinity,
+                  repeatDelay: 0.5, // Задержка между повторами 0.5 сек
+                  delay: 0.3, // Задержка перед первым запуском
                 }}
               />
             </div>
