@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local"
 import "./globals.css";
 import {twMerge} from "tailwind-merge"
+import { Header } from "@/sections/Header";
 
 const inter = localFont({
   src: '../../public/fonts/Inter-VariableFont_opsz,wght.ttf',
@@ -14,7 +15,8 @@ const calistoga = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Tajiyev Eziz",
+  description: "I specialize in transforming designs into functional, high-performing web applications. Let's discuss your next project."
 };
 
 export default function RootLayout({
@@ -31,6 +33,7 @@ export default function RootLayout({
          "bg-gray-900 text-white antialiased font-sans"
          )}
         >
+          <Header />
           {children}
       </body>
     </html>

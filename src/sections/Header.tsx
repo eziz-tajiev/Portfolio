@@ -10,65 +10,62 @@
 //   </div>
 //  );
 // };
-'use client'
+"use client";
 import { useState } from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 let tabs = [
   {
-    id: "home",
     label: "Home",
-    href: "#",
+    href: "/#home",
   },
   {
-    id: "projects",
     label: "Projects",
-    href: "#",
+    href: "/#projects",
   },
   {
-    id: "about",
     label: "About",
-    href: "#",
+    href: "/#about",
   },
   {
-    id: "contact",
     label: "Contact",
-    href: "#",
-  }
-]
+    href: "/#contact",
+  },
+];
 
 export const Header = () => {
-  let [activeTab, setActiveTab] = useState(tabs[0].id);
   return (
-    <div>
-      <div className="flex justify-center items-center fixed top-3 left-1/2 -translate-x-1/2 z-20">
-        <div className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
-          {tabs.map(tab=>(
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`${
-               activeTab === tab.id ? "" : "hover:text-white/70"
-                } relative nav-item`}
-              >
-                {activeTab === tab.id && (
-                  <motion.div 
-                    layoutId="active-pill"
-                    className="absolute bg-white inset-0"
-                    style={{
-                      borderRadius: '9999px',
-                    }}
-                    transition={{
-                      type:"spring",
-                      duration:0.6
-                    }}
-                  />
-                )}
-                <span className="relative z-10 mix-blend-exclusion">{tab.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
+    <header className="flex justify-center items-center fixed top-3 left-1/2 -translate-x-1/2 z-20">
+      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
+        {tabs.map((tab) => (
+          <Link
+            key={tab.href}
+            href={tab.href}
+            className={`${
+              "" === tab.href ? "" : "hover:text-white/70"
+            } relative nav-item`}
+          >
+            {/* {activeTab === tab.id && ( */}
+            <motion.div
+              layoutId="active-pill"
+              className="absolute bg-white inset-0"
+              style={{
+                borderRadius: "9999px",
+              }}
+              transition={{
+                type: "spring",
+                duration: 0.6,
+              }}
+            />
+            {/* )} */}
+            <span className="relative z-10 mix-blend-exclusion">
+              {tab.label}
+            </span>
+          </Link>
+        ))}
+      </nav>
+    </header>
   );
 };
