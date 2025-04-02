@@ -52,9 +52,9 @@ export const ProjectsSection = () => {
     <section id="projects" className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow="Real-world Results"
+          eyebrow="Real Results"
           title="Featured Projects"
-          description="See how I transformed concepts into engaging digital experiences."
+          description="See what I’ve been working on"
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project) => (
