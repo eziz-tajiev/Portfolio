@@ -76,37 +76,35 @@ export const HeroSection = () => {
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
 
-        <HeroOrbit size={800} rotation={-72}>
-          <StartIcon className="size-28 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={550} rotation={20}>
-          <StartIcon className="size-12 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98}>
-          <StartIcon className="size-8 text-emerald-300" />
-        </HeroOrbit>
-
-        <HeroOrbit size={430} rotation={-14}>
+        <HeroOrbit size={430} rotation={-14} duration={30}>
           <SparkleIcon className="size-8 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={440} rotation={79}>
+        <HeroOrbit size={440} rotation={79} duration={32}>
           <SparkleIcon className="size-5 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={530} rotation={178}>
+        <HeroOrbit size={520} rotation={-41} duration={34}>
+          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
+        <HeroOrbit size={530} rotation={178} duration={36}>
           <SparkleIcon className="size-10 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={710} rotation={144}>
+        <HeroOrbit size={550} rotation={20} duration={38}>
+          <StartIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={590} rotation={98} duration={40}>
+          <StartIcon className="size-8 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={650} rotation={-5} duration={42}>
+          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
+        <HeroOrbit size={710} rotation={144} duration={44}>
           <SparkleIcon className="size-14 text-emerald-300/20" />
         </HeroOrbit>
-
-        <HeroOrbit size={720} rotation={85}>
+        <HeroOrbit size={720} rotation={85} duration={46}>
           <div className="size-3 rounded-full bg-emerald-300/20"></div>
         </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41}>
-          <div className="size-2 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5}>
-          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+        <HeroOrbit size={800} rotation={-72} duration={48}>
+          <StartIcon className="size-28 text-emerald-300" />
         </HeroOrbit>
       </div>
     </section>

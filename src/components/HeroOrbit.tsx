@@ -5,7 +5,12 @@ export const HeroOrbit = ({
   children,
   size,
   rotation,
-}: PropsWithChildren<{ size: number; rotation: number }>) => {
+  duration,
+}: PropsWithChildren<{
+  size: number;
+  rotation: number;
+  duration?: number;
+}>) => {
   return (
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <motion.div
@@ -24,7 +29,7 @@ export const HeroOrbit = ({
         transition={{
           repeat: Infinity,
           repeatType: "loop",
-          duration: 10,
+          duration: duration,
           ease: "linear",
         }}
       >
