@@ -63,7 +63,7 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 z-10 sticky top-16"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 z-10 sticky"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
@@ -101,7 +101,7 @@ export const ProjectsSection = () => {
                       aria-label={`Visit the live site for \${project.title}`}
                     >
                       <motion.div
-                        whileHover="hover"
+                        whileTap="hover"
                         className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center
                       gap-2 mt-8 md:w-auto px-6"
                       >

@@ -68,7 +68,7 @@ export const HeroSection = () => {
           </Link>
           <Link href="/#contact" aria-label="Go to contact section.">
             <motion.div
-              whileHover="hover"
+              whileTap="hover"
               className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl"
             >
               <motion.span
@@ -76,7 +76,7 @@ export const HeroSection = () => {
                   hover: { rotate: [0, 20, -10, 0] },
                 }}
                 transition={{
-                  duration: 0.7,
+                  duration: 0.6,
                   ease: easeInOut,
                 }}
               >
