@@ -1,12 +1,14 @@
+"use client";
+
 import photo1 from "@/assets/images/dark-saas-landing-page.png";
 import photo2 from "@/assets/images/light-saas-landing-page.png";
 import photo3 from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
+import { motion } from "framer-motion";
 
 const portfolioProjects = [
   {
@@ -88,13 +90,23 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <a href="">
-                    <button
+                    <motion.button
+                      whileHover="hover"
                       className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center
                       gap-2 mt-8 md:w-auto px-6"
                     >
                       <span>Visit Live Site</span>
-                      <ArrowUpRight className="size-4" />
-                    </button>
+                      <motion.div
+                        variants={{
+                          hover: {
+                            x: 3,
+                            y: -3,
+                          },
+                        }}
+                      >
+                        <ArrowUpRight className="size-4" />
+                      </motion.div>
+                    </motion.button>
                   </a>
                 </div>
                 <div className="relative">

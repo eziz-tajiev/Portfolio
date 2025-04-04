@@ -6,10 +6,14 @@ export const HeroOrbit = ({
   size,
   rotation,
   duration,
+  spin,
+  isRotate = true,
 }: PropsWithChildren<{
   size: number;
   rotation: number;
-  duration?: number;
+  duration: number;
+  spin?: number;
+  isRotate?: boolean;
 }>) => {
   return (
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -34,6 +38,15 @@ export const HeroOrbit = ({
         }}
       >
         <motion.div
+          animate={{
+            rotate: isRotate ? 360 : 0,
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: spin,
+            ease: "linear",
+          }}
           className="inline-flex"
           style={{
             transform: `rotate(${rotation * -1}deg)`,
