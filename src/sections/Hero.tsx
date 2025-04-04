@@ -51,6 +51,7 @@ export const HeroSection = () => {
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
           <Link
             href="/#projects"
+            aria-label="Go to project section."
             className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
           >
             <span className="font-semibold">Explore My Work</span>
@@ -65,7 +66,7 @@ export const HeroSection = () => {
               <ArrowDown className="size-4" />
             </motion.div>
           </Link>
-          <Link href="/#contact">
+          <Link href="/#contact" aria-label="Go to contact section.">
             <motion.div
               whileHover="hover"
               className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl"
