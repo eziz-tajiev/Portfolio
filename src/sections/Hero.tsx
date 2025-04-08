@@ -39,20 +39,20 @@ export const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
+        <div className="max-w-xl mx-auto">
+          <h1 className="font-serif text-3xl md:text-5xl text-center mt-7 tracking-wide">
             Eziz Tajiyev
           </h1>
-          <p className="mt-4 text-center text-white/60 md:text-lg">
-            I'm a beginner React developer, ready to take an internship, learn
-            new technologies, and adapt to the team.
+          <p className="mt-4 text-center text-white/60 text-base md:text-lg">
+            I am a beginner front-end developer, always eager to learn something
+            new and adapt to any tech stack used by the team.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+        <div className="flex flex-col w-[75%] mx-auto md:flex-row md:w-[60%] lg:w-[50%] justify-center items-center mt-8 gap-4 text-base">
           <Link
             href="/#projects"
             aria-label="Go to project section."
-            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+            className="w-full inline-flex justify-center items-center gap-2 border border-white/15 py-3 rounded-xl"
           >
             <span className="font-semibold">Explore My Work</span>
             <motion.div
@@ -66,18 +66,22 @@ export const HeroSection = () => {
               <ArrowDown className="size-4" />
             </motion.div>
           </Link>
-          <Link href="/#contact" aria-label="Go to contact section.">
+          <Link
+            className="w-full"
+            href="/#contact"
+            aria-label="Go to contact section."
+          >
             <motion.div
-              whileTap="hover"
-              className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl"
+              whileHover="hover"
+              className="w-full inline-flex justify-center items-center gap-2 bg-white text-gray-900 py-3 rounded-xl"
             >
               <motion.span
                 variants={{
-                  hover: { rotate: [0, 20, -10, 0] },
+                  hover: { rotate: [0, 20, -15, 10, -5, 0] },
                 }}
                 transition={{
-                  duration: 0.6,
-                  ease: easeInOut,
+                  ease: "easeInOut",
+                  duration: 1.2,
                 }}
               >
                 👋🏽
