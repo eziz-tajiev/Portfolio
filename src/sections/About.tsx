@@ -1,6 +1,5 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import StarIcon from "@/assets/icons/star.svg";
 import myPhoto from "@/assets/images/myPhoto.jpg";
 import Image from "next/image";
 import JsIcon from "@/assets/icons/square-js.svg";
@@ -15,7 +14,6 @@ import NextJsIcon from "@/assets/icons/nextjs.svg";
 import ReduxIcon from "@/assets/icons/redux.svg";
 import AntDesign from "@/assets/icons/ant-design.svg";
 import Sass from "@/assets/icons/sass.svg";
-import { TechIcon } from "@/components/TechIcon";
 import myCv from "@/assets/images/myCv.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
@@ -124,11 +122,11 @@ export const AboutSection = () => {
                 title="My Toolbox"
                 description="Explore the technologies and tools I use to craft exceptional digital experiences."
               />
-              <ToolboxItems items={toolboxItems1} />
+              <ToolboxItems items={toolboxItems1} reverse={true} />
               <ToolboxItems
                 items={toolboxItems2}
                 className="mt-6"
-                itemsWrapperClassName="-translate-x-1/2"
+                reverse={false}
               />
             </Card>
           </div>

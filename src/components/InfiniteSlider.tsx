@@ -1,23 +1,24 @@
 "use client";
 import { useMotionValue, animate, motion } from "framer-motion";
-import { useState, useEffect, Children } from "react";
+import { useState, useEffect } from "react";
 import useMeasure from "react-use-measure";
 
 export type InfiniteSliderProps = {
   children: React.ReactNode;
-  gap?: number;
+  gap: number;
   speed: number;
   speedOnHover?: number;
   reverse: boolean;
-  className: string;
+  className?: string;
 };
 
 export function InfiniteSlider({
   children,
-  gap = 16,
-  speed = 100,
-  speedOnHover = 150,
+  gap,
+  speed,
+  speedOnHover,
   reverse = false,
+  className,
 }: InfiniteSliderProps) {
   const [currentSpeed, setCurrentSpeed] = useState(speed);
   const [ref, { width }] = useMeasure();
@@ -50,7 +51,7 @@ export function InfiniteSlider({
     } else {
       controls = animate(translation, [from, to], {
         ease: "linear",
-        duration: duration,
+        duration,
         repeat: Infinity,
         repeatType: "loop",
         repeatDelay: 0,
@@ -61,7 +62,7 @@ export function InfiniteSlider({
     }
 
     return controls?.stop;
-  }, [key, translation, currentSpeed, width, gap, isTransitioning]);
+  }, [key, translation, currentSpeed, width, isTransitioning]);
 
   const hoverProps = speedOnHover
     ? {
@@ -76,19 +77,17 @@ export function InfiniteSlider({
       }
     : {};
   return (
-    <div className="">
-      <motion.div
-        className="flex py-3"
-        style={{
-          x: translation, // Используем только horizontal трансляцию
-          gap: `${gap}px`,
-        }}
-        ref={ref}
-        {...hoverProps} // Применяем обработчики событий для hover
-      >
-        {children}
-        {children} {/* Дублируем контент для эффекта бесконечности */}
-      </motion.div>
-    </div>
+    <motion.div
+      className={className}
+      style={{
+        x: translation,
+        gap: `${gap}px`,
+      }}
+      ref={ref}
+      {...hoverProps}
+    >
+      {children}
+      {children}
+    </motion.div>
   );
 }

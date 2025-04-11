@@ -1,17 +1,18 @@
 import { TechIcon } from "@/components/TechIcon";
 import { twMerge } from "tailwind-merge";
+import { InfiniteSlider } from "./InfiniteSlider";
 
 export const ToolboxItems = ({
   items,
   className,
-  itemsWrapperClassName,
+  reverse,
 }: {
   items: {
     title: string;
     iconType: React.ElementType;
   }[];
   className?: string;
-  itemsWrapperClassName?: string;
+  reverse: boolean;
 }) => {
   return (
     <div
@@ -20,22 +21,22 @@ export const ToolboxItems = ({
         className
       )}
     >
-      <div
-        className={twMerge(
-          "flex py-0.5 flex-none gap-6 pr-6",
-          itemsWrapperClassName
-        )}
+      <InfiniteSlider
+        speed={80}
+        reverse={reverse}
+        className="flex flex-none py-0.5"
+        gap={16}
       >
         {items.map((item) => (
           <div
             key={item.title}
-            className="inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-white/10 rounded-lg"
+            className="inline-flex items-center py-2 px-3 gap-4 outline outline-2 outline-white/10 rounded-lg"
           >
             <TechIcon component={item.iconType} />
             <span className="font-semibold">{item.title}</span>
           </div>
         ))}
-      </div>
+      </InfiniteSlider>
     </div>
   );
 };
