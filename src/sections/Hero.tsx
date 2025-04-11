@@ -73,6 +73,7 @@ export const HeroSection = () => {
           >
             <motion.div
               whileHover="hover"
+              whileTap="hover"
               className="w-full inline-flex justify-center items-center gap-2 bg-white text-gray-900 py-3 rounded-xl"
             >
               <motion.span
@@ -81,7 +82,7 @@ export const HeroSection = () => {
                 }}
                 transition={{
                   ease: "easeInOut",
-                  duration: 1.2,
+                  duration: 0.7,
                 }}
               >
                 👋🏽

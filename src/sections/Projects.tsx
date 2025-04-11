@@ -8,7 +8,7 @@ import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import { motion } from "framer-motion";
+import { hover, motion } from "framer-motion";
 import Link from "next/link";
 
 const portfolioProjects = [
@@ -101,6 +101,7 @@ export const ProjectsSection = () => {
                   >
                     <motion.div
                       whileHover="hover"
+                      whileTap="hover"
                       className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center
                       gap-2 mt-8 md:w-auto px-6"
                     >

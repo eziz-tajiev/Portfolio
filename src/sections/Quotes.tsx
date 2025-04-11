@@ -53,7 +53,7 @@ export const QuotesSection = () => {
         <div className="flex mt-16 lg:mt-24 overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-8 flex-none">
             <InfiniteSlider
-              speedOnHover={60}
+              speedOnHover={70}
               speed={100}
               gap={32}
               className="flex flex-none"

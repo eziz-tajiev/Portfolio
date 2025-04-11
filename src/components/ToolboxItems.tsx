@@ -22,7 +22,7 @@ export const ToolboxItems = ({
       )}
     >
       <InfiniteSlider
-        speed={100}
+        speed={95}
         reverse={reverse}
         className="flex flex-none py-0.5"
         gap={16}

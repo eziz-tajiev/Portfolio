@@ -19,7 +19,7 @@ import Sass from "@/assets/icons/sass.svg";
 import myCv from "@/assets/images/myCv.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const toolboxItems1 = [
@@ -87,13 +87,13 @@ const hobbies = [
     title: "Reading",
     emoji: "📚",
     left: "7%",
-    top: "25%",
+    top: "28%",
   },
   {
     title: "Hiking",
     emoji: "🥾",
     left: "67%",
-    top: "48%",
+    top: "45%",
   },
   {
     title: "Swimming",
@@ -105,6 +105,8 @@ const hobbies = [
 
 export const AboutSection = () => {
   const hobbiesRef = useRef(null);
+  const photoRef = useRef(null);
+  const isInView = useInView(photoRef, { once: false });
   return (
     <section id="about" className="py-20 lg:py-28">
       <div className="container">
@@ -117,9 +119,15 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 md:gap-8 gap-8">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader title="My Photo" description="Explore my photo" />
-              <div className="w-44 mx-auto mt-2 md:mt-0">
-                <Image src={myPhoto} alt="My Photo" />
-              </div>
+              <motion.div
+                ref={photoRef}
+                initial={{ y: 100, opacity: 0 }}
+                animate={isInView ? { y: 0, opacity: 1 } : {}}
+                transition={{ type: "spring", stiffness: 125, damping: 15 }}
+                className="w-44 mx-auto mt-2 md:mt-0"
+              >
+                <Image src={myPhoto} alt="My Photo." />
+              </motion.div>
             </Card>
 
             <Card className="h-[320px] flex flex-col md:col-span-3 lg:col-span-2">
