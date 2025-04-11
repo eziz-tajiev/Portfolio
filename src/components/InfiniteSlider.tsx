@@ -74,6 +74,14 @@ export function InfiniteSlider({
           setIsTransitioning(true);
           setCurrentSpeed(speed);
         },
+        onTouchStart: () => {
+          setIsTransitioning(true);
+          setCurrentSpeed(speedOnHover);
+        },
+        onTouchEnd: () => {
+          setIsTransitioning(true);
+          setCurrentSpeed(speed);
+        },
       }
     : {};
   return (
