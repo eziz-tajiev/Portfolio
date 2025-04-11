@@ -1,3 +1,5 @@
+"use client";
+
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import myPhoto from "@/assets/images/myPhoto.jpg";
@@ -17,6 +19,8 @@ import Sass from "@/assets/icons/sass.svg";
 import myCv from "@/assets/images/myCv.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const toolboxItems1 = [
   {
@@ -88,18 +92,20 @@ const hobbies = [
   {
     title: "Hiking",
     emoji: "🥾",
-    left: "57%",
+    left: "67%",
     top: "48%",
   },
   {
     title: "Swimming",
     emoji: "🏊🏽‍♂️",
-    left: "46%",
+    left: "56%",
     top: "74%",
   },
 ];
 
 export const AboutSection = () => {
+  const hobbiesRef = useRef(null);
+
   return (
     <section id="about" className="py-20 lg:py-28">
       <div className="container">
@@ -138,9 +144,12 @@ export const AboutSection = () => {
                 description="Explore my interest and hobbies beyond the digital realm"
                 classname="px-6 py-6"
               />
-              <div className="relative flex-1">
+              <div className="relative flex-1" ref={hobbiesRef}>
                 {hobbies.map((hobby) => (
-                  <div
+                  <motion.div
+                    drag
+                    dragConstraints={hobbiesRef}
+                    // dragElastic={0.8}
                     key={hobby.title}
                     className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
                     style={{
@@ -152,7 +161,7 @@ export const AboutSection = () => {
                       {hobby.title}
                     </span>
                     <span>{hobby.emoji}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
