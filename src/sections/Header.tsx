@@ -1,20 +1,7 @@
-// export const Header = () => {
-//   return (
-//    <div className="flex justify-center items-center fixed top-3 left-1/2 -translate-x-1/2 z-20">
-//     <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
-//       <a href="#" className="nav-item">Home</a>
-//       <a href="#" className="nav-item">Projects</a>
-//       <a href="#" className="nav-item">About</a>
-//       <a href="#" className="nav-item bg-white text-gray-900">Contact</a>
-//     </nav>
-//   </div>
-//  );
-// };
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 let tabs = [
   {
@@ -36,21 +23,31 @@ let tabs = [
 ];
 
 export const Header = () => {
+  const [hash, setHash] = useState<string | undefined>(() => {
+    if (window != undefined) return `/${window.location.hash}`;
+  });
+
+  const router = useRouter();
+
   return (
     <header className="flex justify-center items-center fixed top-3 left-1/2 -translate-x-1/2 z-20">
       <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
         {tabs.map((tab) => (
-          <Link
+          <button
             key={tab.href}
-            href={tab.href}
+            onClick={() => {
+              setHash(tab.href);
+              router.replace(tab.href);
+            }}
             className={`${
-              "" === tab.href ? "" : "hover:text-white/70"
+              hash === tab.href ? "" : "hover:text-white/70"
             } relative nav-item`}
           >
-            {/* {activeTab === tab.id && ( */}
             <motion.div
-              layoutId="active-pill"
-              className="absolute bg-white inset-0"
+              layoutId={"active-pill"}
+              className={`absolute inset-0 ${
+                tab.href == hash ? "bg-white" : ""
+              }`}
               style={{
                 borderRadius: "9999px",
               }}
@@ -63,7 +60,7 @@ export const Header = () => {
             <span className="relative z-10 mix-blend-exclusion">
               {tab.label}
             </span>
-          </Link>
+          </button>
         ))}
       </nav>
     </header>
