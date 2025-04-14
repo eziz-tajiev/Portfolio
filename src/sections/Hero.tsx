@@ -30,7 +30,6 @@ export const HeroSection = () => {
                   ease: "easeOut",
                   repeat: Infinity,
                   repeatDelay: 0.5,
-                  delay: 0.3,
                 }}
               />
             </div>

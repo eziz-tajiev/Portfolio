@@ -21,6 +21,7 @@ import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 const toolboxItems1 = [
   {
@@ -106,7 +107,7 @@ const hobbies = [
 export const AboutSection = () => {
   const hobbiesRef = useRef(null);
   const photoRef = useRef(null);
-  const isInView = useInView(photoRef, { once: false });
+  const isInView = useInView(photoRef, { once: true });
   return (
     <section id="about" className="py-20 lg:py-28">
       <div className="container">
@@ -180,11 +181,21 @@ export const AboutSection = () => {
                 title="My CV"
                 description="Click to the my CV and Explore more about me"
               />
-              <div
-                className="absolute bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full size-20 top-[61%] left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center
-                after:content-[''] after:absolute after:inset-0 after:border-2 after:border-gray-950/30 after:rounded-full"
-              >
-                <Image src={myCv} alt="My CV" className="size-14" />
+              <div className="absolute bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full size-20 top-[61%] left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center">
+                <motion.div
+                  initial={{ scale: 1, opacity: 0.7 }}
+                  animate={{ scale: 1.3, opacity: 0 }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeOut",
+                    repeat: Infinity,
+                    repeatDelay: 0.5,
+                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full -z-10"
+                />
+                <Link href="/cv.pdf" target="_blank">
+                  <Image src={myCv} alt="My CV" className="size-14" />
+                </Link>
               </div>
             </Card>
           </div>

@@ -25,3 +25,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --primary: #00f0ff;
+  --secondary: #ffffff;
+}

@@ -8,7 +8,7 @@ import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import { hover, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const portfolioProjects = [
@@ -62,7 +62,7 @@ export const ProjectsSection = () => {
         <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project, projectIndex) => (
             <Card
-              key={project.title}
+              key={projectIndex}
               className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 z-10 sticky"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
@@ -85,9 +85,9 @@ export const ProjectsSection = () => {
                     <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   </header>
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                    {project.results.map((result) => (
+                    {project.results.map((result, indexResult) => (
                       <li
-                        key={project.title}
+                        key={indexResult}
                         className="flex gap-2 text-white/50 text-sm md:text-base"
                       >
                         <CheckIcon className="size-5 md:size-6" />
