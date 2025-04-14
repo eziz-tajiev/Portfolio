@@ -1,36 +1,13 @@
-// export const ContactSection = () => {
-//   return(
-//     <div className="py-16">
-//       <div className="container">
-//         <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl flex md:flex-row gap-8 flex-col">
-//           <div className="flex flex-col justify-start h-fit gap-4 m-auto ml-0">
-//             <h2 className="font-serif text-2xl">Let's create something amazing together</h2>
-//             <h2 className="font-serif text-2xl">+99361965538</h2>
-//             <h2 className="font-serif text-2xl">eziztajiev@gmail.com</h2>
-//           </div>
-//           <div className="flex flex-col md:flex-1">
-//               <div className="mt-2 text-sm flex flex-row">
-//                 <div className="flex flex-col gap-2 w-full">
-//                   <input type="text" placeholder="Full Name" className="rounded-md px-2 py-1 bg-gray-950" />
-//                   <input type="text" placeholder="How to contact you" className="rounded-md px-2 py-1 bg-gray-950"/>
-//                   <textarea rows={6} placeholder="Description" className="rounded-md px-2 py-1 bg-gray-950" />
-//                 </div>
-//               </div>
-//             <button className="bg-white text-gray-900 px-6 h-10 font-semibold rounded-xl mt-8 ">Send</button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-
-// };
-
+"use client";
 import Call from "@/assets/icons/call.svg";
 import Email from "@/assets/icons/sms.svg";
 import WhatsApp from "@/assets/icons/whatsApp.svg";
 import GitHub from "@/assets/icons/Github - Negative.svg";
 import Telegram from "@/assets/icons/Telegram - Negative.svg";
-import { title } from "process";
+import { easeInOut, motion } from "framer-motion";
+import { reverse } from "dns";
+import { useState } from "react";
+
 const contacts = [
   {
     icon: <Call className="md:size-7 lg:size-8" />,
@@ -62,6 +39,34 @@ const socialMedia = [
 ];
 
 export const ContactSection = () => {
+  // const { mutate, data, isPending, error } = useMutation({
+  //   mutationFn: () => {
+  //     const response = await fetch("/api/send-email", {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         fullName: "test",
+  //         contact: "test",
+  //         content: "test",
+  //       }),
+  //     });
+
+  //     return response
+  //   }
+  // })
+
+  async function handleSend() {
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      body: JSON.stringify({
+        fullName: "test",
+        contact: "test",
+        content: "test",
+      }),
+    });
+
+    return response;
+  }
+
   return (
     <section id="contact" className="pt-8 pb-0">
       <div className="relative overflow-x-clip">
@@ -81,8 +86,9 @@ export const ContactSection = () => {
                 </div>
                 <div className="flex justify-center lg:justify-start">
                   <div className="flex flex-col items-center text-[18px] leading-[21.78px] gap-3 md:text-2xl lg:text-[28px] lg:items-start lg:justify-start">
-                    {contacts.map((contact) => (
+                    {contacts.map((contact, contactIndex) => (
                       <a
+                        key={contactIndex}
                         href={contact.href}
                         className="inline-flex gap-2 items-center"
                       >
@@ -94,8 +100,9 @@ export const ContactSection = () => {
                 </div>
 
                 <div className="flex justify-around pt-7 md:justify-center md:gap-10 lg:justify-start lg:pt-10">
-                  {socialMedia.map((media) => (
+                  {socialMedia.map((media, mediaIndex) => (
                     <a
+                      key={mediaIndex}
                       href={media.href}
                       className="md:inline-flex md:items-center md:gap-3 lg:flex-col lg:justify-center"
                     >
@@ -125,9 +132,34 @@ export const ContactSection = () => {
                       placeholder="Description"
                       className="contact-input resize-none h-[150px]"
                     ></textarea>
-                    <button className="text-base font-bold py-3 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-xl text-gray-950">
+                    <button
+                      onClick={handleSend}
+                      // onClick={mutate}
+                      className="text-base font-bold py-3 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-xl text-gray-950"
+                    >
                       Send
                     </button>
+                    {/* <button className="py-3 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-xl">
+                      <motion.span
+                        className="font-bold"
+                        initial={{ backgroundPosition: "90% center" }}
+                        animate={{ backgroundPosition: "0% center" }}
+                        transition={{
+                          duration: 2,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                        }}
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(90deg, var(--secondary) 45%, var(--primary) 50%, var(--primary) 50%, var(--secondary) 54%)",
+                          backgroundSize: "250% 100%",
+                          backgroundClip: "text",
+                          color: "transparent",
+                        }}
+                      >
+                        Sending...
+                      </motion.span>
+                    </button> */}
                   </div>
                 </div>
               </div>
