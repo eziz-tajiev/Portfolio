@@ -113,13 +113,13 @@ export const AboutSection = () => {
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
-          title="A Glimpse Into My World"
-          description="Learn more about who I am, what I do."
+          title="Let's dive in"
+          description="Let me introduce myself."
         />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 md:gap-8 gap-8">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader title="My Photo" description="Explore my photo" />
+              <CardHeader title="My Photo" description="This is me." />
               <motion.div
                 ref={photoRef}
                 initial={{ y: 100, opacity: 0 }}
@@ -134,7 +134,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My Toolbox"
-                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                description="Take a look at the tools and technologies that I use to build digital experiences."
               />
               <ToolboxItems items={toolboxItems1} reverse={true} />
               <ToolboxItems
@@ -149,7 +149,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="Beyond the code"
-                description="Explore my interest and hobbies beyond the digital realm"
+                description="Some of my offline interests and hobbies."
                 classname="px-6 py-6"
               />
               <div
@@ -177,10 +177,7 @@ export const AboutSection = () => {
             </Card>
 
             <Card className="h-[320px] relative md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title="My CV"
-                description="Click to the my CV and Explore more about me"
-              />
+              <CardHeader title="My CV" description="View my CV." />
               <div className="absolute bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full size-20 top-[61%] left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center">
                 <motion.div
                   initial={{ scale: 1, opacity: 0.7 }}

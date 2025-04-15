@@ -13,37 +13,37 @@ import Link from "next/link";
 
 const portfolioProjects = [
   {
-    company: "Project one",
-    year: "2022",
-    title: "Fitness Website",
+    technology: "React",
+    version: "18.3.1",
+    title: "FitGym Fitness",
     results: [
-      { title: "Project Description" },
-      { title: "Project Description" },
-      { title: "Project Description" },
+      { title: "Better understood the React approach." },
+      { title: "Animations with Framer Motion." },
+      { title: "Responsive design." },
     ],
     link: "fitgym",
     image: photo1,
   },
   {
-    company: "Project Two",
-    year: "2021",
-    title: "Github User Search",
+    technology: "Next",
+    version: "15.1.0",
+    title: "GitHub User Search",
     results: [
-      { title: "Project Description" },
-      { title: "Project Description" },
-      { title: "Project Description" },
+      { title: "Worked with GitHub API to fetch user data." },
+      { title: "Learned React Query and Zustand." },
+      { title: "Responsive and accessible UI." },
     ],
     link: "Github",
     image: photo2,
   },
   {
-    company: "Project Three",
-    year: "2023",
-    title: "Nextjs Dashboard",
+    technology: "Next",
+    version: "15.2.4",
+    title: "Next.js Dashboard",
     results: [
-      { title: "Project Description" },
-      { title: "Project Description" },
-      { title: "Project Description" },
+      { title: "Understood how SSR works." },
+      { title: "Learned how file-based routing works in Next.js" },
+      { title: "Figure out why many developers choose Next.js" },
     ],
     link: "dashboard",
     image: photo3,
@@ -57,7 +57,7 @@ export const ProjectsSection = () => {
         <SectionHeader
           eyebrow="Real Results"
           title="Featured Projects"
-          description="See what I’ve been working on"
+          description="See what I’ve been working on."
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-16">
           {portfolioProjects.map((project, projectIndex) => (
@@ -75,9 +75,9 @@ export const ProjectsSection = () => {
                       className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest
                       text-sm text-transparent bg-clip-text"
                     >
-                      <span>{project.company}</span>
+                      <span>{project.technology}</span>
                       <span>&bull;</span>
-                      <span>{project.year}</span>
+                      <span>{project.version}</span>
                     </div>
                     <h3 className="font-serif text-2xl md:text-4xl mt-2 md:mt-5">
                       {project.title}
@@ -90,7 +90,7 @@ export const ProjectsSection = () => {
                         key={indexResult}
                         className="flex gap-2 text-white/50 text-sm md:text-base"
                       >
-                        <CheckIcon className="size-5 md:size-6" />
+                        <CheckIcon className="size-5 md:size-6 flex-shrink-0" />
                         <span>{result.title}</span>
                       </li>
                     ))}
