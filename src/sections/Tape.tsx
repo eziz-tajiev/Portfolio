@@ -3,7 +3,7 @@ import { InfiniteSlider } from "@/components/InfiniteSlider";
 
 const words = [
   "Perfomant",
-  "Accsessibile",
+  "Accessible",
   "Secure",
   "Interactive",
   "Scalable",
