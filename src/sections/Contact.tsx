@@ -32,7 +32,7 @@ const socialMedia = [
     href: "#",
   },
   {
-    icon: <Telegram className="md:size-7 lg:size-11" />,
+    icon: <Telegram className="md:size-7 lg:size-11 -translate-x-[2px]" />,
     title: "Telegram",
     href: "#",
   },
@@ -104,9 +104,11 @@ export const ContactSection = () => {
                     <a
                       key={mediaIndex}
                       href={media.href}
-                      className="md:inline-flex md:items-center md:gap-3 lg:flex-col lg:justify-center"
+                      className="md:inline-flex md:items-center md:gap-2 lg:flex-col lg:justify-center"
                     >
-                      <span className="flex justify-center">{media.icon}</span>
+                      <span className="flex justify-center text-center">
+                        {media.icon}
+                      </span>
                       <span className="text-[14px] leading-[16.94px] md:text-base">
                         {media.title}
                       </span>
@@ -125,7 +127,7 @@ export const ContactSection = () => {
                     />
                     <input
                       type="text"
-                      placeholder="How to contact you"
+                      placeholder="How to contact you?"
                       className="contact-input"
                     />
                     <textarea

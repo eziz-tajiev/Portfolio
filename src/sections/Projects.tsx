@@ -30,15 +30,15 @@ const portfolioProjects = [
     title: "GitHub User Search",
     results: [
       { title: "Worked with GitHub API to fetch user data." },
-      { title: "Learned React Query and Zustand." },
+      { title: "Learned React Query" },
       { title: "Responsive and accessible UI." },
     ],
-    link: "Github",
+    link: "github-user-search-kappa-one.vercel.app",
     image: photo2,
   },
   {
     technology: "Next",
-    version: "15.2.4",
+    version: "15.2.4 (on process)",
     title: "Next.js Dashboard",
     results: [
       { title: "Understood how SSR works." },
