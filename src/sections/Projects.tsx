@@ -1,8 +1,8 @@
 "use client";
 
-import photo1 from "@/assets/images/dark-saas-landing-page.png";
-import photo2 from "@/assets/images/light-saas-landing-page.png";
-import photo3 from "@/assets/images/ai-startup-landing-page.png";
+import fitgym from "@/assets/images/fitgym.png";
+import github from "@/assets/images/github.png";
+import dashboard from "@/assets/images/dashboard.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
@@ -22,7 +22,7 @@ const portfolioProjects = [
       { title: "Responsive design." },
     ],
     link: "fitgym",
-    image: photo1,
+    image: fitgym,
   },
   {
     technology: "Next",
@@ -34,7 +34,7 @@ const portfolioProjects = [
       { title: "Responsive and accessible UI." },
     ],
     link: "github-user-search-kappa-one.vercel.app",
-    image: photo2,
+    image: github,
   },
   {
     technology: "Next",
@@ -46,7 +46,7 @@ const portfolioProjects = [
       { title: "Figure out why many developers choose Next.js" },
     ],
     link: "dashboard",
-    image: photo3,
+    image: dashboard,
   },
 ];
 
