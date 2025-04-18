@@ -1,8 +1,8 @@
 "use client";
 
-import fitgym from "@/assets/images/fitgym.png";
-import github from "@/assets/images/github.png";
-import dashboard from "@/assets/images/dashboard.png";
+import fitgym from "@/assets/images/fitgym.jpg";
+import github from "@/assets/images/github.jpg";
+import dashboard from "@/assets/images/dashboard.jpg";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
@@ -21,7 +21,7 @@ const portfolioProjects = [
       { title: "Animations with Framer Motion." },
       { title: "Responsive design." },
     ],
-    link: "fitgym",
+    link: "https://fit-gym-ruddy.vercel.app",
     image: fitgym,
   },
   {
@@ -33,7 +33,7 @@ const portfolioProjects = [
       { title: "Learned React Query" },
       { title: "Responsive and accessible UI." },
     ],
-    link: "github-user-search-kappa-one.vercel.app",
+    link: "https://github-user-search-kappa-one.vercel.app",
     image: github,
   },
   {
@@ -45,7 +45,7 @@ const portfolioProjects = [
       { title: "Learned how file-based routing works in Next.js" },
       { title: "Figure out why many developers choose Next.js" },
     ],
-    link: "dashboard",
+    link: "https://next-dashboard-omega-five-44.vercel.ap",
     image: dashboard,
   },
 ];
@@ -97,6 +97,7 @@ export const ProjectsSection = () => {
                   </ul>
                   <Link
                     href={project.link}
+                    target="_blank"
                     aria-label={`Visit the live site for \${project.title}`}
                   >
                     <motion.div
