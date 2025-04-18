@@ -23,13 +23,13 @@ export const ContactForm = () => {
     error: mutateError,
   } = useMutation({
     mutationFn: handleSubmit(async (data) => {
-      const response = (await fetch("/api/send-email", {
+      const response = (await fetch("api/send-email", {
         method: "POST",
         body: JSON.stringify(data),
       }).then((data) => data.json())) as { success: boolean; message?: string };
 
       if (response.success) reset();
-      else throw new Error(response.message);
+      else throw new Error("Failed to send email! Please try again.");
 
       return response;
     }),
