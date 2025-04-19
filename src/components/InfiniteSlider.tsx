@@ -62,7 +62,7 @@ export function InfiniteSlider({
     }
 
     return controls?.stop;
-  }, [key, translation, currentSpeed, width, isTransitioning]);
+  }, [key, translation, currentSpeed, width, isTransitioning, gap, reverse]);
 
   const hoverProps = speedOnHover
     ? {
