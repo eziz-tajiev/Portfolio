@@ -27,12 +27,12 @@ const contacts = [
   {
     icon: <Call className="md:size-7 lg:size-8" />,
     title: "+993 61 965538",
-    href: "#",
+    href: "tel:+99361965538",
   },
   {
     icon: <Email className="md:size-7 lg:size-8" />,
     title: "eziztajiev@gmail.com",
-    href: "#",
+    href: "mailto:eziztajiev@gmail.com",
   },
 ];
 
@@ -42,10 +42,14 @@ export const Contacts = () => {
       <div className="flex justify-center lg:justify-start">
         <div className="flex flex-col items-center text-[18px] leading-[21.78px] gap-3 md:text-2xl lg:text-[28px] lg:items-start lg:justify-start">
           {contacts.map((contact, contactIndex) => (
-            <p key={contactIndex} className="inline-flex gap-2 items-center">
+            <a
+              href={contact.href}
+              key={contactIndex}
+              className="inline-flex gap-2 items-center"
+            >
               <span>{contact.icon}</span>
               <span>{contact.title}</span>
-            </p>
+            </a>
           ))}
         </div>
       </div>
