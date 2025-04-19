@@ -16,9 +16,9 @@ const calistoga = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tajiyev Eziz",
+  title: "Eziz Tajiyev",
   description:
-    "I specialize in transforming designs into functional, high-performing web applications. Let's discuss your next project.",
+    "I am a beginner front-end developer, always eager to learn something new and adapt to any tech stack used by the team.",
 };
 
 export default function RootLayout({
